@@ -69,20 +69,8 @@ Write the following methods in the classes in the files provided. Feel free to b
 
 ### Object Relationship Methods
 
-#### Article
-
-- `.author`
-  - Should return the `Author` object associated with this article. 
-  - This can be a property but it's not required
-- `.magazine`
-  - Should return the `Magazine` object associated with this article.
-  - This can be a property but it's not required
-
 #### Author
 
-- `.articles`
-  - Returns an `list` of `Article` objects the author has written
-  - This can be a property but it's not required
 - `Author get_magazines()`
   - Returns all the `Magazine` objects that this author has written articles for
     - **hint**: You can access the magazines by looping over `.articles`
@@ -90,9 +78,6 @@ Write the following methods in the classes in the files provided. Feel free to b
 
 #### Magazine
 
-- `.articles`
-  - Returns an `list` of `Article` objects that have been written for the magazine
-  - This can be a property but it's not required
 - `Magazine get_authors()`
   - Returns all the `Author` objects who have written for this magazine
     - **hint**: You can access the authors by looping over `.articles`
@@ -101,8 +86,8 @@ Write the following methods in the classes in the files provided. Feel free to b
 ### Associations and Aggregate Methods
 
 #### Author
-- `Author get_shortest_article()`
-  - Returns the `Article` object with the smallest `word_count` written by this author
+- `Author has_written_for_magazine(magazine)`
+  - Returns `True` if the author has written an article for the given `magazine` object, `False` otherwise.
 
 #### Magazine
 

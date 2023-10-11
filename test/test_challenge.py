@@ -101,15 +101,19 @@ def test_magazine_get_authors():
     assert joe in cosmo.get_authors()
     assert anne not in cosmo.get_authors()
 
-def test_author_get_shortest_article():
-    """Should return the Article with the smallest word_count written by this author"""
+def test_author_has_written_for_magazine():
+    """
+    Should return True if the author has written an
+    article for the given magazine, False otherwise
+    """
     anne = Author('Anne')
     cosmo = Magazine('Cosmo', 'fashion')
-    a1 = Article(anne, cosmo, 'Eight Hours With Lindsay Lohan', 12000)
-    a2 = Article(anne, cosmo, '2023 Tennis Outfits', 250)
-    a3 = Article(anne, cosmo, 'Best iPad Deals', 500)
+    vogue = Magazine('Vogue', 'fashion')
+    Article(anne, cosmo, '2023 Tennis Outfits', 250)
 
-    assert anne.get_shortest_article() == a2
+    assert anne.has_written_for_magazine(cosmo) == True
+    assert anne.has_written_for_magazine(vogue) == False
+
 
 def test_magazine_get_article_titles():
     anne = Author('Anne')

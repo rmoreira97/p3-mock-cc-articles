@@ -6,5 +6,5 @@ class Author:
     def get_magazines(self):
         pass
 
-    def get_shortest_article(self):
+    def has_written_for_magazine(self, magazine):
         pass
